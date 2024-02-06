@@ -11,15 +11,14 @@ import java.util.ArrayList;
 @Repository
 public class TouristRepository {
 
-    public ResponseEntity<TouristAttraction> data() {
+    public ResponseEntity<ArrayList<TouristAttraction>> data() {
         ArrayList<TouristAttraction> data = new ArrayList<>();
         data.add(new TouristAttraction("Java", "Programming"));
-        data.add(new TouristAttraction("Restaurant", "Eat food"));
-        data.add(new TouristAttraction("Jacket", "Warm inside"));
+        data.add(new TouristAttraction("Restaurant", "Food"));
+        data.add(new TouristAttraction("Jacket", "Warm"));
         return new ResponseEntity<>(data, HttpStatus.OK);
 
     }
-k
 
 
 
