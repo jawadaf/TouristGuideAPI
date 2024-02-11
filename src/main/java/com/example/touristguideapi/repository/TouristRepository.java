@@ -10,11 +10,11 @@ import java.util.List;
 
 @Repository
 public class TouristRepository {
-    private ArrayList<TouristAttraction> data = new ArrayList<>();
+    private List<TouristAttraction> data = new ArrayList<>(); // ændret den fra arraylist til list
 
 
     public ResponseEntity<List<TouristAttraction>> data() {
-        List<TouristAttraction> data = new ArrayList<>();
+        //List<TouristAttraction> data = new ArrayList<>();
         data.add(new TouristAttraction("Java", "Programming"));
         data.add(new TouristAttraction("Restaurant", "Food"));
         data.add(new TouristAttraction("Jacket", "Warm"));

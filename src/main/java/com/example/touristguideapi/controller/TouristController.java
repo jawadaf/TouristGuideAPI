@@ -18,7 +18,13 @@ public class TouristController {
         this.touristService = touristService;
     }
 
-    @GetMapping("/getAllAttractions")
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
+
+
+    @GetMapping("")
     public ResponseEntity<List<TouristAttraction>> getAll() {
         List<TouristAttraction> attractions = touristService.getAll();
         return new ResponseEntity<>(attractions, HttpStatus.OK);
