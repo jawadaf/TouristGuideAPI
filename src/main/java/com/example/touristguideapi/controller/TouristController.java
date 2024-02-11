@@ -51,8 +51,4 @@ public class TouristController {
         touristService.delete(name);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
-
 }

@@ -36,8 +36,4 @@ public class TouristService {
             touristRepository.delete(attraction);
         }
     }
-
-
-
-
 }

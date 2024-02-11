@@ -50,10 +50,4 @@ public class TouristRepository {
     public void delete(TouristAttraction touristAttraction) {
         data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
     }
-
-
-
-
-
-
 }
