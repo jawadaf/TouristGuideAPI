@@ -13,12 +13,11 @@ public class TouristRepository {
     private List<TouristAttraction> data = new ArrayList<>(); // ændret den fra arraylist til list
 
 
-    public ResponseEntity<List<TouristAttraction>> data() {
+    public TouristRepository() {
         //List<TouristAttraction> data = new ArrayList<>();
         data.add(new TouristAttraction("Java", "Programming"));
         data.add(new TouristAttraction("Restaurant", "Food"));
         data.add(new TouristAttraction("Jacket", "Warm"));
-        return new ResponseEntity<>(data, HttpStatus.OK);
     }
 
     public List<TouristAttraction> getAll() {
@@ -34,20 +33,23 @@ public class TouristRepository {
         return null;
     }
 
-    public void create(TouristAttraction touristAttraction) {
+    public TouristAttraction create(TouristAttraction touristAttraction) {
         data.add(touristAttraction);
+        return touristAttraction;
     }
 
 
-    public void update(TouristAttraction touristAttraction) {
+    public TouristAttraction update(TouristAttraction touristAttraction) {
        for (TouristAttraction attraction : data) {
            if (attraction.getName().equals(touristAttraction.getName())) {
                attraction.setDescription(touristAttraction.getDescription());
            }
        }
+       return touristAttraction;
     }
 
-    public void delete(TouristAttraction touristAttraction) {
+    public TouristAttraction delete(TouristAttraction touristAttraction) {
         data.removeIf(attraction -> attraction.getName().equals(touristAttraction.getName()));
+        return touristAttraction;
     }
 }

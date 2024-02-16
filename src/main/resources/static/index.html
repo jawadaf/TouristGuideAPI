@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,6 +9,24 @@
 <header>
     <h1>Welcome to Tourist Guiden API</h1>
 </header>
+
+<form th:action="@{/create}" method="post">
+    <fieldset>
+        <legend> Create </legend>
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" />
+            </li>
+
+            <li>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" />
+            </li>
+            <button type="submit">Send</button>
+        </ul>
+    </fieldset>
+</form>
 
 </body>
 </html>

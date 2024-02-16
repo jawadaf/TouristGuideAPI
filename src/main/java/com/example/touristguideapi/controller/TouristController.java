@@ -41,7 +41,8 @@ public class TouristController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Void> create(@RequestBody TouristAttraction touristAttraction) {
+    public ResponseEntity<Void> create(@RequestBody String name, String description) {
+        TouristAttraction touristAttraction = new TouristAttraction(name, description);
         touristService.create(touristAttraction);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
